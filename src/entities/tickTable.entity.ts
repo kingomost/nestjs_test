@@ -1,13 +1,13 @@
 import { Connection, createConnection, Entity, PrimaryColumn, Column, PrimaryGeneratedColumn } from "typeorm";
 
-interface IEntityClass {
+interface IEntityTickerClass  {
     ttamp?: number
     price?: number
 }
 
 function createEntity(tableName: string): Function {
     @Entity({ name: tableName })
-    class EntityClass implements IEntityClass {
+    class EntityTickerClass implements IEntityTickerClass {
         public static tableName = tableName;
 
         @PrimaryGeneratedColumn()
@@ -19,7 +19,7 @@ function createEntity(tableName: string): Function {
         @Column({ type: 'float8' })
         price: number
     }
-    return EntityClass;
+    return EntityTickerClass;
 }
 
 class ConnectionService {
@@ -47,4 +47,4 @@ class ConnectionService {
     }
 }
 
-export { createEntity, ConnectionService, IEntityClass };
+export { createEntity, ConnectionService, IEntityTickerClass };

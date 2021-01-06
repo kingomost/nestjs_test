@@ -1,7 +1,7 @@
 import { Entity, Column, PrimaryGeneratedColumn } from 'typeorm';
 
-@Entity()
-export class Symbol {
+@Entity('symbol')
+class Symbol {
     @PrimaryGeneratedColumn()
     id: number
 
@@ -41,3 +41,5 @@ export class Symbol {
     @Column({ type: 'text', default: null })
     description: string
 }
+
+export { Symbol };

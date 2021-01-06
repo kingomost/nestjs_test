@@ -1,14 +1,12 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { UserModule } from './modules/user/user.module';
-import { AuthModule } from './modules/auth/auth.module';
+import { SymbolModule } from './modules/symbol/symbol.module';
 import { SysModule } from './modules/sys/sys.module';
 
 @Module({
   imports: [
-    UserModule,
-    AuthModule,
+    SymbolModule,
     SysModule,
     ConfigModule.forRoot({
       envFilePath: '.env',

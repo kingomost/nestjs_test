@@ -3,7 +3,7 @@ import { InjectRepository } from '@nestjs/typeorm';
 import axios, { AxiosPromise, AxiosResponse } from 'axios';
 
 import { Symbol } from 'src/entities/symbol.entity';
-import { ConnectionService, createEntity, IEntityClass } from 'src/entities/tickTable.entity';
+import { ConnectionService, createEntity, IEntityTickerClass } from 'src/entities/tickTable.entity';
 import { CoingeckoService } from 'src/externalServices/CoingeckoService';
 import { ISymbol } from 'src/interfaces/symbol.intarface';
 import { Repository } from 'typeorm';
@@ -107,31 +107,6 @@ export class SysService {
                 console.log('A----------');
                 console.log(a.data);
                 return a.data;
-
-                // const b: AxiosResponse = await axios({
-                //     method: 'GET',
-                //     url: `https://api.coingecko.com/api/v3//coins/${symb.coingeckoId}/tickers`,
-                //     timeout: 10000,
-                // });
-                // console.log('B----------');
-                // console.log(b.data);
-
-                // const c: AxiosResponse = await axios({
-                //     method: 'GET',
-                //     url: `https://api.coingecko.com/api/v3//coins/${symb.coingeckoId}/history`,
-                //     timeout: 10000,
-                // });
-                // console.log('C----------');
-                // console.log(c.data);
-
-                // const d: AxiosResponse = await axios({
-                //     method: 'GET',
-                //     url: `https://api.coingecko.com/api/v3//coins/${symb.coingeckoId}/market_chart`,
-                //     timeout: 10000,
-                // });
-                // console.log('D----------');
-                // console.log(d.data);
-
                 break;
             }
             return "";
